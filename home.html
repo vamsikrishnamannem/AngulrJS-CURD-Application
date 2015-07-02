@@ -1,0 +1,28 @@
+<div>
+    <div style="float:right">
+        <button ng-click="addnew()" class="btn btn-primary">Add New</button>
+    </div>
+    <div style="clear:both"></div>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr> 
+            	<th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="contact in contacts">
+            	<td>{{ contact.id }}</td>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.age }}</td>
+                <td>{{ contact.gender }}</td>
+                <td> <a href="javascript:void(0)" ng-controller="ContactEditController" ng-click="edit(contact)">edit</a> | <a href="javascript:void(0)" ng-click="delete(contact.id)">delete</a>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,27 @@
+<form class="well" name="add_form">
+	<div class="form-group">
+	   <label>Name</label>
+	   <input type="text" name="name" ng-model="newcontact.name" ng-required="true"/>
+	   <div ng-show="add_form.name.$dirty && add_form.name.$invalid">
+		  <span class="error" ng-show="add_form.name.$error.required">The field is required.</span>
+	   </div>
+    </div>
+    <div class="form-group">
+		<label>Age</label>
+		<input type="text" name="age" ng-model="newcontact.age" ng-required="true"/>
+	    <div ng-show="add_form.age.$dirty && add_form.age.$invalid">
+		  <span class="error" ng-show="add_form.age.$error.required">The field is required.</span>
+		</div>
+    </div>
+    <div class="form-group">
+	  <label>Gender</label>
+	  	<select ng-model="newcontact.gender" ng-options="gender for gender in ['Male', 'Female']" ng-required="true">
+			<option value="">Select Gender</option>
+    	</select>
+	    <div ng-show="add_form.gender.$dirty && add_form.gender.$invalid">
+		  <span class="error" ng-show="add_form.gender.$error.required">The field is required.</span>
+		</div>
+    </div>
+    <input type="hidden" ng-model="newcontact.id" />
+    <input  type="button" ng-disabled="add_form.$invalid" value="{{buttontext}}" ng-click="saveContact()" class="btn btn-primary" />
+</form>
